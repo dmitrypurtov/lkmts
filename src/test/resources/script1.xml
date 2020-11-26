@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="LK.MTS" verbose="1">
+    <listeners>
+        <!--  <listener class-name="listeners.RetryTestAnnotationTransformerListener"/> -->
+        <listener class-name="listeners.SimpleTestResultLogListener"/>
+    </listeners>
+
+    <parameter name="waitMinutesNewService" value="1"/>
+    <parameter name="userFilePath" value="\src\test\resources\user.csv"/>
+
+    <parameter name="serviceOff" value='
+        [
+            "Определитель номера",
+            "Служба коротких сообщений"
+        ]
+    '/>
+    <parameter name="serviceOn" value='
+        [
+            "Баланс другого абонента",
+            "Вам звонили!"
+        ]
+    '/>
+
+    <test name="ServiceUpdate">
+        <classes>
+            <class name="scripts.lkmts">
+            </class>
+        </classes>
+    </test>
+
+</suite>

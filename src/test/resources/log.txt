@@ -1,0 +1,3 @@
+2020-09-24 16:58:05	Ошибка	Element not found {By.xpath: //*[@name="login"]}
+Expected: visible
+
